@@ -1,4 +1,4 @@
-import { getCarts, getSingleCart } from "./cartService";
+import { getCarts, getSingleCart, addCart } from "./cartService";
 
 describe("getCarts", () => {
   it("should return an array of carts", async () => {
@@ -35,5 +35,30 @@ describe("getSingleCart", () => {
     await expect(getSingleCart(cartId)).rejects.toThrow(
       "The requested resource was not found."
     );
+  });
+});
+
+describe("addCart", () => {
+  it("should return a cart with expected properties", async () => {
+    const products = [
+      {
+        id: 1,
+        quantity: 1,
+      },
+      {
+        id: 50,
+        quantity: 2,
+      },
+    ];
+    const cart = await addCart(products);
+    expect(cart.id).toBeDefined();
+    expect(cart.userId).toBeDefined();
+    expect(cart.products[0].id).toBe(1);
+    expect(cart.products[1].id).toBe(50);
+  });
+
+  it("should throw an error for invalid products", async () => {
+    const products: any = [];
+    await expect(addCart(products)).rejects.toThrow("Failed to add cart.");
   });
 });
