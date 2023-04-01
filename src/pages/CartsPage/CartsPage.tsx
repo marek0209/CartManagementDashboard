@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./HomePage.module.css";
+import styles from "./CartsPage.module.css";
 
-const HomePage = () => {
+const CartsPage = () => {
   return (
     <>
       <h1 className={styles.title}> Dashboard</h1>HomePage
@@ -9,4 +9,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default CartsPage;
