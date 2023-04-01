@@ -24,3 +24,12 @@ export async function getCarts(): Promise<Cart[]> {
   const response = await handleNetworkErrors(axiosInstance.get(""));
   return response.data.carts;
 }
+
+export async function getSingleCart(id: number): Promise<Cart> {
+  try {
+    const response = await handleNetworkErrors(axiosInstance.get(`/${id}`));
+    return response.data;
+  } catch (error: any) {
+    throw error;
+  }
+}
