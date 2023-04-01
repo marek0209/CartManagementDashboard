@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { Cart } from "../types/cartTypes";
+import { Cart, NewCart } from "../types/cartTypes";
 
 const API_BASE_URL = "https://dummyjson.com/carts";
 
@@ -31,5 +31,19 @@ export async function getSingleCart(id: number): Promise<Cart> {
     return response.data;
   } catch (error: any) {
     throw error;
+  }
+}
+
+export async function addCart(products: NewCart[]): Promise<Cart> {
+  try {
+    const response = await handleNetworkErrors(
+      axiosInstance.post("/add", {
+        userId: 1,
+        products,
+      })
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error("Failed to add cart.");
   }
 }

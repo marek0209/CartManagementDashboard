@@ -17,3 +17,8 @@ export interface CartItemDetails {
   total: number;
   discount: number;
 }
+
+export interface NewCart {
+  id: number;
+  quantity: number;
+}
