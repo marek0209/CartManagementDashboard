@@ -15,7 +15,7 @@ export interface CartItemDetails {
   price: number;
   quantity: number;
   total: number;
-  discount: number;
+  discountedPrice: number;
 }
 
 export interface NewCart {
