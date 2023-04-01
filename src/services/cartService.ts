@@ -47,3 +47,14 @@ export async function addCart(products: NewCart[]): Promise<Cart> {
     throw new Error("Failed to add cart.");
   }
 }
+
+export async function deleteCart(id: number): Promise<void> {
+  try {
+    const response = await handleNetworkErrors(axiosInstance.delete(`/${id}`));
+    if (!response) {
+      throw new Error("Failed to delete cart.");
+    }
+  } catch (error) {
+    throw error;
+  }
+}
