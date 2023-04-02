@@ -1,6 +1,7 @@
 import Reacts from "react";
 import { Cart } from "../../types/cartTypes";
 import { User } from "../../types/userTypes";
+import styles from "./CartsTableRow.module.css";
 
 type CartTableRowProps = {
   id: number;
@@ -28,12 +29,15 @@ const CartsTableRow: React.FC<CartTableRowProps> = ({
 
       <td>
         <button
-          className="show-details"
+          className={styles.showDetails}
           onClick={() => handleShowDetails(cart.id)}
         >
           Details
         </button>
-        <button className="delete" onClick={() => handleDeleteCart(cart.id)}>
+        <button
+          className={styles.delete}
+          onClick={() => handleDeleteCart(cart.id)}
+        >
           Delete
         </button>
       </td>

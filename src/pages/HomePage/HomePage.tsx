@@ -6,6 +6,7 @@ import calculateCartStats from "../../utils/cartsStatsCalculator";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import StatTile from "../../components/StatTile/StatTile";
+import CartsTable from "../../components/CartsTable/CartsTable";
 
 const HomePage = () => {
   const [carts, setCarts] = useState<Cart[]>([]);
@@ -21,6 +22,10 @@ const HomePage = () => {
   const { users, activeCarts, totalValue, totalItems } =
     calculateCartStats(carts);
 
+  const topThreeCarts: Cart[] = carts
+    .sort((a: Cart, b: Cart) => b.total - a.total)
+    .slice(0, 3);
+
   return (
     <>
       <Header />
@@ -35,6 +40,10 @@ const HomePage = () => {
             <StatTile label="Total Items" value={totalItems} emoji="📦" />
             <StatTile label="Active Carts" value={activeCarts} emoji="🛒" />
             <StatTile label="Users" value={users} emoji="🤵" />
+          </div>
+          <h2> List of Carts</h2>
+          <div className={styles.table}>
+            <CartsTable carts={topThreeCarts} />
           </div>
         </div>
       </div>

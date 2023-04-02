@@ -6,7 +6,7 @@ import { deleteCart } from "../../services/cartService";
 import { getSingleUser } from "../../services/userService";
 import CartsTableRow from "../CartsTableRow/CartsTableRow";
 import CartsTableHeader from "../CartsTableHeader/CartsTableHeader";
-
+import styles from "./CartsTable.module.css";
 interface CartsTableProps {
   carts: Cart[];
 }
@@ -18,12 +18,9 @@ const CartsTable = ({ carts }: CartsTableProps) => {
 
   const handleDeleteCart = async (id: number): Promise<void> => {
     try {
-      console.log(id);
-
       await deleteCart(id);
       const newCarts = cartList.filter((cart) => cart.id !== id);
       setCartList(newCarts);
-      console.log(newCarts);
     } catch (error) {
       console.error(error);
     }
@@ -51,9 +48,8 @@ const CartsTable = ({ carts }: CartsTableProps) => {
   }, [cartList, users]);
 
   return (
-    <div className="cart-list">
-      <h2> List of Carts</h2>
-      <table className="styled-table">
+    <div className={styles.CartsTableContainer}>
+      <table className={styles.styledTable}>
         <CartsTableHeader />
         <tbody>
           {cartList.map((cart: Cart) => (

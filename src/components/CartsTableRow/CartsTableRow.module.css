@@ -1,0 +1,21 @@
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.75em 1em;
+  position: relative;
+}
+
+button.delete {
+  background-color: #e00034;
+  padding: 0.75em 1.1em;
+}
+
+button.showDetails {
+  background-color: #009879;
+}

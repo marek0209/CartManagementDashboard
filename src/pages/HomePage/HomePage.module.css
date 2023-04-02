@@ -1,14 +1,5 @@
 .container {
   width: 100%;
-  display: flex;
-}
-
-.sidebar {
-  flex-basis: 20%;
-}
-
-.content {
-  flex-basis: 80%;
 }
 
 .content h2 {
@@ -24,11 +15,22 @@
   width: 80%;
   font-family: "Outfit", sans-serif;
   box-sizing: border-box;
+  margin-left: 2rem;
+}
+
+.table {
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
   .gridContainer {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin-left: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-left: 20rem;
   }
 }
