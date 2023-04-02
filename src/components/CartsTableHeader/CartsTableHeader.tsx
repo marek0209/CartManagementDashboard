@@ -6,10 +6,10 @@ const CartsTableHeader: React.FC = () => {
       <tr>
         <th>ID</th>
         <th>User ID </th>
+        <th>Email</th>
         <th>Products</th>
         <th>Qty of Items </th>
         <th>Total </th>
-        <th>Email</th>
         <th>Actions</th>
       </tr>
     </thead>

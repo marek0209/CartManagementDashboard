@@ -21,10 +21,11 @@ const CartsTableRow: React.FC<CartTableRowProps> = ({
     <tr key={id}>
       <td>{cart.id}</td>
       <td>{cart.userId}</td>
+      <td>{user?.email ?? ""}</td>
       <td>{cart.totalProducts}</td>
       <td>{cart.totalQuantity}</td>
       <td>{cart.total}</td>
-      <td>{user?.email ?? ""}</td>
+
       <td>
         <button
           className="show-details"
