@@ -12,8 +12,6 @@ interface CartsTableProps {
 }
 
 const CartsTable = ({ carts }: CartsTableProps) => {
-  const [sortBy, setSortBy] = useState<keyof Cart>("id");
-  const [sortOrder, setSortOrder] = useState("");
   const [cartList, setCartList] = useState(carts);
   const [users, setUsers] = useState<{ [key: number]: User }>({});
   const navigate: NavigateFunction = useNavigate();
@@ -34,20 +32,6 @@ const CartsTable = ({ carts }: CartsTableProps) => {
   const handleShowDetails = (id: number): void => {
     navigate(`/cart/${id}`);
   };
-
-  const sortData = (key: keyof Cart): void => {
-    if (sortBy === key) {
-      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-    } else {
-      setSortBy(key);
-      setSortOrder("asc");
-    }
-  };
-
-  const sortedCarts: Cart[] = cartList.sort((a, b): number => {
-    const compare = a[sortBy] > b[sortBy] ? 1 : -1;
-    return sortOrder === "asc" ? compare : -compare;
-  });
 
   useEffect(() => {
     setCartList(carts);
@@ -70,13 +54,9 @@ const CartsTable = ({ carts }: CartsTableProps) => {
     <div className="cart-list">
       <h2> List of Carts</h2>
       <table className="styled-table">
-        <CartsTableHeader
-          sortData={sortData}
-          sortBy={sortBy}
-          sortOrder={sortOrder}
-        />
+        <CartsTableHeader />
         <tbody>
-          {sortedCarts.map((cart: Cart) => (
+          {cartList.map((cart: Cart) => (
             <CartsTableRow
               key={cart.id}
               id={cart.id}
