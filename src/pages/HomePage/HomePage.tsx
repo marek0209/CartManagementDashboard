@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 import { Cart } from "../../types/cartTypes";
 import { getCarts } from "../../services/cartService";
 import calculateCartStats from "../../utils/cartsStatsCalculator";
+import Header from "../../components/Header/Header";
 const HomePage = () => {
   const [carts, setCarts] = useState<Cart[]>([]);
   async function fetchCarts(): Promise<void> {
@@ -19,10 +20,11 @@ const HomePage = () => {
 
   return (
     <>
+      <Header />
       <div className={styles.gridContainer}>
         <div className={styles.tile}>
           <div className={styles.tileDescription}>💰Total Value</div>
-          <div className={styles.tileStats}>{totalValue}</div>
+          <div className={styles.tileStats}>{totalValue}$</div>
         </div>
         <div className={styles.tile}>
           <div className={styles.tileDescription}>📦Total Items</div>

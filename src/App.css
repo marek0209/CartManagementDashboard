@@ -3,4 +3,11 @@
 
   body{
     background-color: #f4f4f4;
+    width: 100%;
+}
+#root{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
