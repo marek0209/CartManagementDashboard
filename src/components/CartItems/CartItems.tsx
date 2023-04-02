@@ -4,6 +4,7 @@ import { CartItemDetails } from "../../types/cartTypes";
 import { getSingleCart } from "../../services/cartService";
 import styles from "./CartItems.module.css";
 import Error from "../Error/Error";
+import PriceChart from "../PriceChart/PriceChart";
 
 interface Props {
   id: string | undefined;
@@ -66,6 +67,7 @@ const CartItems: React.FC<Props> = ({ id }) => {
           ))}
         </tbody>
       </table>
+      <PriceChart cartItems={cartItems} />
     </div>
   );
 };
