@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { getSingleUser } from "../../services/userService";
+import Reacts from "react";
 import { Cart } from "../../types/cartTypes";
 import { User } from "../../types/userTypes";
 
 type CartTableRowProps = {
   id: number;
   cart: Cart;
+  user: User;
   handleDeleteCart: (id: number) => Promise<void>;
   handleShowDetails: (id: number) => void;
 };
@@ -13,18 +13,10 @@ type CartTableRowProps = {
 const CartsTableRow: React.FC<CartTableRowProps> = ({
   id,
   cart,
+  user,
   handleDeleteCart,
   handleShowDetails,
 }) => {
-  const [user, setUser] = useState<User | undefined>(undefined);
-  useEffect(() => {
-    async function fetchUser(id: number) {
-      const response = await getSingleUser(id);
-      setUser(response);
-    }
-
-    fetchUser(id);
-  }, [id]);
   return (
     <tr key={id}>
       <td>{cart.id}</td>
