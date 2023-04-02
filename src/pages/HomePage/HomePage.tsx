@@ -19,23 +19,23 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="grid">
-        <div className="tile">
-          <span>Total Value:</span>
-          <h3>{totalValue}</h3>
+      <div className={styles.gridContainer}>
+        <div className={styles.tile}>
+          <div className={styles.tileDescription}>💰Total Value</div>
+          <div className={styles.tileStats}>{totalValue}</div>
         </div>
-        <div className="tile">
-          <span>Total Items:</span>
-          <h3>{totalItems}</h3>
+        <div className={styles.tile}>
+          <div className={styles.tileDescription}>📦Total Items</div>
+          <div className={styles.tileStats}>{totalItems}</div>
         </div>
 
-        <div className="tile">
-          <span>Active Carts</span>
-          <h3>{activeCarts}</h3>
+        <div className={styles.tile}>
+          <div className={styles.tileDescription}>🛒Active Carts</div>
+          <div className={styles.tileStats}>{activeCarts}</div>
         </div>
-        <div className="tile">
-          <span>Users</span>
-          <h3>{users}</h3>
+        <div className={styles.tile}>
+          <div className={styles.tileDescription}>🤵Users</div>
+          <div className={styles.tileStats}>{users}</div>
         </div>
       </div>
     </>
