@@ -27,7 +27,7 @@ const CartsTable = ({ carts }: CartsTableProps) => {
   };
 
   const handleShowDetails = (id: number): void => {
-    navigate(`/cart/${id}`);
+    navigate(`/carts/${id}`);
   };
 
   useEffect(() => {

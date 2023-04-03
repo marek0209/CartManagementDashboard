@@ -1,0 +1,16 @@
+.CartDetailsPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+h3{
+  margin-left: 2rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-left: 20rem;
+  }
+}

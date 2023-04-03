@@ -66,8 +66,8 @@
 
 @media (min-width: 1280px) {
   .tile {
-    width: 13rem;
-    height: 13rem;
+    width: 12rem;
+    height: 12rem;
   }
   .tileDescription {
     font-size: 1rem;

@@ -1,3 +1,88 @@
-.grid-container {
-  display: grid;
+.TableContainer {
+  overflow-x: auto;
+  width: 100%;
+}
+h2 {
+  align-self: flex-start;
+  margin-left: 1rem;
+}
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.75em 1em;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+button.CloseButton {
+  background-color: #e00034;
+  padding: 0.75em 1.1em;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.styledTable {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styledTable thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styledTable th,
+.styledTable td {
+  padding: 12px 15px;
+}
+
+.styledTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styledTable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styledTable tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styledTable tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+@media (min-width: 568px) {
+  .styledTable {
+    margin-left: 1rem;
+    width: 95%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .styledTable {
+    margin-left: 2rem;
+    width: 95%;
+    box-sizing: border-box;
+  }
+
+  button.CloseButton {
+    background-color: #e00034;
+    padding: 0.75em 1.1em;
+    top: 1rem;
+    right: 3rem;
+  }
 }
