@@ -12,7 +12,6 @@ async function handleNetworkErrors<T>(promise: Promise<T>): Promise<T> {
   try {
     return await promise;
   } catch (error: any) {
-    console.error(error);
     if (error.response && error.response.status === 404) {
       throw new Error("The requested resource was not found.");
     }

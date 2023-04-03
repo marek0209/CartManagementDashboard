@@ -22,7 +22,7 @@ const CartsTable = ({ carts }: CartsTableProps) => {
       const newCarts = cartList.filter((cart) => cart.id !== id);
       setCartList(newCarts);
     } catch (error) {
-      console.error(error);
+      alert(error);
     }
   };
 
