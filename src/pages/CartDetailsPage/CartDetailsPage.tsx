@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import CartItems from "../../components/CartItems/CartItems";
 import { useParams } from "react-router-dom";
 import { getSingleCart } from "../../services/cartService";
 import { CartItemDetails } from "../../types/cartTypes";
-import PriceChart from "../../components/PriceChart/PriceChart";
 
-import styles from "./CartDeatilsPage.module.css";
+import CartItems from "../../components/CartItems/CartItems";
+import PriceChart from "../../components/PriceChart/PriceChart";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
+
+import styles from "./CartDetailsPage.module.css";
 
 const CartDetailsPage: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItemDetails[]>([]);
@@ -29,7 +30,7 @@ const CartDetailsPage: React.FC = () => {
   }, [id]);
 
   return (
-    <div className={styles.CartDetailsPageContainer}>
+    <div className={styles.cartDetailsPageContainer}>
       <Header />
       <div className={styles.sidebar}>
         <Sidebar />
@@ -40,7 +41,6 @@ const CartDetailsPage: React.FC = () => {
         <h3>Price Chart</h3>
         <PriceChart cartItems={cartItems} />
       </div>
-
     </div>
   );
 };

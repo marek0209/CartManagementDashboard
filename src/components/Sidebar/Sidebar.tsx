@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
     <>
       <div
         className={`${styles.hamburger} ${
-          isMenuOpen ? styles["is-active"] : ""
+          isMenuOpen ? styles["isActive"] : ""
         }`}
         onClick={toggleMenu}
       >
@@ -55,7 +55,6 @@ const Sidebar: React.FC = () => {
           <li>
             <Link to="/carts"> Carts </Link>
           </li>
-
         </ul>
       </div>
     </>

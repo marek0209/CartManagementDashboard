@@ -1,14 +1,13 @@
-.Price {
-   width: 90%;
-   aspect-ratio: 1/1;
-   max-width: 90%;
-
+.priceChart {
+  width: 90%;
+  aspect-ratio: 1/1;
+  max-width: 90%;
 }
 
 @media (min-width: 1024px) {
-   .Price {
-      width: 70%;
-      aspect-ratio: 2/1;
-      margin-left: 5rem;
-   }
+  .priceChart {
+    width: 70%;
+    aspect-ratio: 2/1;
+    margin-left: 5rem;
+  }
 }

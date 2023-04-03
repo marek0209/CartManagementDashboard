@@ -24,11 +24,11 @@ const CartItems: React.FC<Props> = ({ id, carts, error }) => {
   }
 
   return (
-    <div className={styles.CartItemsTableContainer}>
+    <div className={styles.cartItemsTableContainer}>
       <button className={styles.CloseButton} onClick={handleCloseDetails}>
         Close
       </button>
-      <div className={styles.TableContainer}>
+      <div className={styles.tableContainer}>
         <table className={styles.styledTable}>
           <thead>
             <tr>

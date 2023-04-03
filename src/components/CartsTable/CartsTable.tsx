@@ -48,7 +48,7 @@ const CartsTable = ({ carts }: CartsTableProps) => {
   }, [cartList, users]);
 
   return (
-    <div className={styles.CartsTableContainer}>
+    <div className={styles.cartsTableContainer}>
       <table className={styles.styledTable}>
         <CartsTableHeader />
         <tbody>

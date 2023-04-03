@@ -17,18 +17,15 @@ const CartsPage = () => {
     fetchCarts();
   }, []);
   return (
-      <div className={styles.CartsPageContainer}>
-        <Header />
-        <div className={styles.sidebar}>
-          <Sidebar />
-        </div>
-        <div className={styles.content}>
-          <CartsTable carts={carts} />
-        </div>
-
+    <div className={styles.cartsPageContainer}>
+      <Header />
+      <div className={styles.sidebar}>
+        <Sidebar />
       </div>
-
-
+      <div className={styles.content}>
+        <CartsTable carts={carts} />
+      </div>
+    </div>
   );
 };
 
