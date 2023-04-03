@@ -7,9 +7,10 @@ import {
   Tooltip,
   Legend,
   Line,
+    ResponsiveContainer
 } from "recharts";
 import { CartItemDetails } from "../../types/cartTypes";
-
+import styles from  "./PriceChart.module.css"
 interface Props {
   cartItems: CartItemDetails[];
 }
@@ -22,13 +23,12 @@ const PriceChart: React.FC<Props> = ({ cartItems }) => {
   }));
 
   return (
-    <div className="price-chart">
-      <h3>Price Chart</h3>
+    <div className={styles.Price}>
+      <ResponsiveContainer height="100%">
       <LineChart
-        width={600}
-        height={300}
+
         data={data}
-        margin={{ right: 100, bottom: 100 }}
+        margin={{ right: 100, bottom: 100, top:20}}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
@@ -41,7 +41,7 @@ const PriceChart: React.FC<Props> = ({ cartItems }) => {
         />
         <YAxis />
         <Tooltip />
-        <Legend verticalAlign="top" align="center" />
+        <Legend verticalAlign="top" align="center" wrapperStyle={{top: 0, left: 25}} />
         <Line type="monotone" dataKey="price" stroke="#8884d8" name="Price" />
         <Line
           type="monotone"
@@ -50,6 +50,7 @@ const PriceChart: React.FC<Props> = ({ cartItems }) => {
           name="Discounted Price"
         />
       </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
