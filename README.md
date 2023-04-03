@@ -1,6 +1,36 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04c1b1cc-a7bd-4e22-b4a2-ee1204502f2d/deploy-status)](https://app.netlify.com/sites/cart-mangement-dashboard/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cart Management Dashboard
+
+## Demo
+
+Live demo [https://cart-mangement-dashboard.netlify.app/](https://cart-mangement-dashboard.netlify.app/)
+
+
+## Installation with docker (Recommended)
+1. Clone or download the repo
+2. Open project folder in terminal
+3. Run in your terminal command   `docker-compose build dev` 
+if your are at linux like os you probably need to type "sudo" before
+4. If the building was successfully completed you can run `docker-compose up dev`
+5. Congratulations, probably if everything went ok, you should be able to run in your browser http://localhost:3003/
+
+To run test via docker you can type:
+
+ `docker-compose run test`
+
+## Installation without docker
+
+1. Clone or download the repo
+3. Open project folder in terminal
+4. Make sure you have node v18.4 or newer installed, type this command:  `npm install`
+5. Once the installation is done, you can run the project: `npm start`
+9. Open http://localhost:3003/ to view in the browser.
+
+
+
+
+
 
 ## Available Scripts
 
