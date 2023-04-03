@@ -50,9 +50,12 @@ const Sidebar: React.FC = () => {
 
         <ul>
           <li>
+            <Link to="/"> Home </Link>
+          </li>
+          <li>
             <Link to="/carts"> Carts </Link>
           </li>
-          <li>Users</li>
+
         </ul>
       </div>
     </>
