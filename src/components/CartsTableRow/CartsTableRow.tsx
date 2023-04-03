@@ -1,4 +1,4 @@
-import Reacts from "react";
+import React from "react";
 import { Cart } from "../../types/cartTypes";
 import { User } from "../../types/userTypes";
 import styles from "./CartsTableRow.module.css";
